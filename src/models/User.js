@@ -29,24 +29,37 @@ let users = [
 ]
 
 
-export default class User{
+export default class User {
 
 
-    constructor(status,firstName,lastName,userName,registrationNumber){
-         users.push({
-            id:users.length+1,
+    constructor(status, firstName, lastName, userName, registrationNumber) {
+        users.push({
+            id: users.length + 1,
             createdDate: new Date(),
             status,
             firstName,
             lastName,
             userName,
             registrationNumber
-         })
+        })
     }
 
-   static loadUsers(){
-       return users
+    static getData() {
+        return users
+    }
+    static checkStatus(status) {
+        switch (status) {
+            
+            case "Validé":return "#5BE881;"
+    
+            case "En validation":return "#FF0000;"
+
+            case "Rejeté":return "#FDB64D;"
+
+
+            default:""
+                break;
+        }
     }
 
-  
 }

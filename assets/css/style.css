@@ -1,0 +1,11 @@
+
+#container2{
+    display: flex;
+    justify-content: flex-end;
+}
+#container2 button{
+    background-color: #FDB64D;
+}
+#badge{
+    background-color: #FDB64D;
+}
