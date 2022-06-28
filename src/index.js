@@ -7,7 +7,7 @@ function loadDataInTheDom(){
     const users=User.getData()
     let tbody=document.querySelector('tbody')
 
-    users.forEach(user=>{
+    users.forEach((user,index)=>{
 
        tbody.innerHTML+=`
        <tr>
@@ -18,10 +18,25 @@ function loadDataInTheDom(){
        <td>${user.firstName}</td>
        <td>${user.lastName}</td>
        <td>${user.registrationNumber}</td>
-       <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+       <td>
+       <i  class="fa fa-trash" aria-hidden="true"></i>
+       <input type="hidden" value="${index}">
+       </td>
      </tr>
        `
     })
 
 }
 loadDataInTheDom()
+
+function removeFromDocument(){
+    document.querySelector('tbody').addEventListener('click',function(e){
+           if(e.target.className=="fa fa-trash")
+           {
+              e.target.parentElement.parentElement.remove()
+              let index =e.target.nextElementSibling.value
+              User.removeFromArray(index)
+           }
+    })
+}
+removeFromDocument()

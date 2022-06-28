@@ -67,5 +67,8 @@ export default class User {
         return  new Date(date).toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) 
       
     }
+    static removeFromArray(index){
+      users.splice(index,1)
+    }
 
 }
