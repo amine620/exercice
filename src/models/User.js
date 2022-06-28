@@ -62,4 +62,10 @@ export default class User {
         }
     }
 
+    static getFormatedDate(date){
+
+        return  new Date(date).toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) 
+      
+    }
+
 }

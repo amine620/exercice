@@ -12,7 +12,7 @@ function loadDataInTheDom(){
        tbody.innerHTML+=`
        <tr>
        <th>${user.id}</th>
-       <td>${user.createdDate}</td>
+       <td>${User.getFormatedDate(user.createdDate)}</td>
        <td><span id="badge" class="badge" style="background-color:${User.checkStatus(user.status)}">${user.status}</span></td>
        <td>${user.userName}</td>
        <td>${user.firstName}</td>
