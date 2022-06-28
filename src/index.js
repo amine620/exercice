@@ -18,7 +18,7 @@ function loadDataInTheDom(){
        <td>${user.firstName}</td>
        <td>${user.lastName}</td>
        <td>${user.registrationNumber}</td>
-       <td>@mdo</td>
+       <td><i class="fa fa-trash" aria-hidden="true"></i></td>
      </tr>
        `
     })

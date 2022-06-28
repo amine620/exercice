@@ -49,12 +49,12 @@ export default class User {
     }
     static checkStatus(status) {
         switch (status) {
-            
+
             case "Validé":return "#5BE881;"
     
-            case "En validation":return "#FF0000;"
+            case "En validation":return "#FDB64D;"
 
-            case "Rejeté":return "#FDB64D;"
+            case "Rejeté":return "#FF0000;"
 
 
             default:""
