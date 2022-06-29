@@ -18,6 +18,19 @@ input,select{
     display: block;
   }
 
+  #container2{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     width: 90%;
+     padding: 20px;
+     margin: auto;
+     border-radius: 10px;
+  }
+  #container2 button{
+    background-color: #FDB64D;
+    padding:5px 40px;
+    border: none;
+    border-radius: 10px;
+  }
   #parentDiv{
     width: 80%;
     margin:auto;
@@ -26,6 +39,7 @@ input,select{
     position: absolute;
     bottom: 30%;
     left: 10%;
+    display: none;
     background-color: white;
   }
 #formDiv{

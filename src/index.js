@@ -13,7 +13,6 @@ run()
 function loadDataInTheDom(){
     const users=User.getData()
     let tbody=document.querySelector('tbody')
-
     users.forEach((user,index)=>{
 
        tbody.innerHTML+=`
@@ -57,8 +56,15 @@ function loadStatus() {
 
 document.getElementById('btnAdd').addEventListener('click',function(){
     addNewUser()
+    document.querySelector('tbody').innerHTML=""
+    loadDataInTheDom()
+
+    document.getElementById('parentDiv').style.display='none'
 })
 
+document.getElementById('btnModal').addEventListener('click',function(){
+    document.getElementById('parentDiv').style.display='block'
+})
 
 function addNewUser() {
     let firstName=document.getElementById('firstName').value
@@ -66,8 +72,7 @@ function addNewUser() {
     let userName=document.getElementById('userName').value
     let createdDate=document.getElementById('createdDate').value
     let status=document.getElementById('status').value
-    let registrationNumber=document.getElementById('registrationNumber').value
-    
-    // console.log(firstName,lastName,userName,createdDate,status,registrationNumber)
-    console.log(createdDate);
+    let registrationNumber=document.getElementById('registrationNumber').value 
+    new User(firstName,lastName,userName,createdDate,status,registrationNumber)
+    // console.log(createdDate);
 }
