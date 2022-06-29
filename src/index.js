@@ -58,7 +58,6 @@ document.getElementById('btnAdd').addEventListener('click',function(){
     addNewUser()
     document.querySelector('tbody').innerHTML=""
     loadDataInTheDom()
-
     document.getElementById('parentDiv').style.display='none'
 })
 
@@ -74,5 +73,9 @@ function addNewUser() {
     let status=document.getElementById('status').value
     let registrationNumber=document.getElementById('registrationNumber').value 
     new User(firstName,lastName,userName,createdDate,status,registrationNumber)
-    // console.log(createdDate);
+    
+    let inputs=document.querySelectorAll("input")
+    for (let index = 0; index < inputs.length; index++) {
+        inputs[index].value="" 
+    }
 }
