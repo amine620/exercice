@@ -1,9 +1,11 @@
 const { default: User } = require("./models/User");
+
+
+
 function run() {
 loadDataInTheDom()
 removeFromDocument()
 loadStatus()
-
 }
 run()
 
