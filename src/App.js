@@ -66,15 +66,26 @@ document.getElementById('btnModal').addEventListener('click',function(){
 })
 
 function addNewUser() {
+    let inputs=document.querySelectorAll("input")
+    let count=0
+
     let firstName=document.getElementById('firstName').value
     let lastName=document.getElementById('lastName').value
     let userName=document.getElementById('userName').value
     let createdDate=document.getElementById('createdDate').value
     let status=document.getElementById('status').value
     let registrationNumber=document.getElementById('registrationNumber').value 
+
+    for (let index = 0; index < inputs.length; index++) {
+       if(inputs[index].value!="" )
+       {
+          count++
+       }
+    }
+    if(count<6) return alert('all input required')
+    
     new User(firstName,lastName,userName,createdDate,status,registrationNumber)
     
-    let inputs=document.querySelectorAll("input")
     for (let index = 0; index < inputs.length; index++) {
         inputs[index].value="" 
     }
