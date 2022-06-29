@@ -82,7 +82,7 @@ function addNewUser() {
           count++
        }
     }
-    if(count<6) return alert('all input required')
+    if(count<inputs.length) return alert('all input required')
     
     new User(firstName,lastName,userName,createdDate,status,registrationNumber)
     
