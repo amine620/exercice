@@ -1,7 +1,7 @@
 const { default: User } = require("./models/User");
+require('../assets/css/style.css')
 
 function run() {
-
 loadDataInTheDom()
 removeFromDocument()
 loadStatus()
