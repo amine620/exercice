@@ -32,16 +32,17 @@ let users = [
 export default class User {
 
 
-    constructor(status, firstName, lastName, userName, registrationNumber) {
+    constructor(firstName, lastName, userName,createdDate,status, registrationNumber) {
         users.push({
             id: users.length + 1,
-            createdDate: new Date(),
+            createdDate,
             status,
             firstName,
             lastName,
             userName,
             registrationNumber
         })
+        console.log(users);
     }
 
     static getData() {
@@ -69,6 +70,7 @@ export default class User {
     }
     static removeFromArray(index){
       users.splice(index,1)
+      console.log(users);
     }
 
 }

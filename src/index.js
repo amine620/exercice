@@ -1,6 +1,13 @@
 const { default: User } = require("./models/User");
 
+function run() {
 
+loadDataInTheDom()
+removeFromDocument()
+loadStatus()
+
+}
+run()
 
 
 function loadDataInTheDom(){
@@ -27,7 +34,6 @@ function loadDataInTheDom(){
     })
 
 }
-loadDataInTheDom()
 
 function removeFromDocument(){
     document.querySelector('tbody').addEventListener('click',function(e){
@@ -39,4 +45,29 @@ function removeFromDocument(){
            }
     })
 }
-removeFromDocument()
+
+function loadStatus() {
+    const statusList=["Rejeté","Validé","En validation"]
+    statusList.forEach(status=>{
+        document.getElementById('status').innerHTML+=`
+           <option value="${status}">${status}</option>
+        `
+    })
+}
+
+document.getElementById('btnAdd').addEventListener('click',function(){
+    addNewUser()
+})
+
+
+function addNewUser() {
+    let firstName=document.getElementById('firstName').value
+    let lastName=document.getElementById('lastName').value
+    let userName=document.getElementById('userName').value
+    let createdDate=document.getElementById('createdDate').value
+    let status=document.getElementById('status').value
+    let registrationNumber=document.getElementById('registrationNumber').value
+    
+    // console.log(firstName,lastName,userName,createdDate,status,registrationNumber)
+    console.log(createdDate);
+}
