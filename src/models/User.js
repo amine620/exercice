@@ -34,7 +34,7 @@ export default class User {
 
     constructor(firstName, lastName, userName,createdDate,status, registrationNumber) {
         users.push({
-            id: users.length + 1,
+            id:new Date().getTime(),
             createdDate,
             status,
             firstName,
